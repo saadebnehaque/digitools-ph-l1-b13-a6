@@ -1,13 +1,13 @@
 import Product from "./Product";
 
-const Products = ({ products }) => {
+const Products = ({ products, handleCartProducts }) => {
 
 
 
     return (
-        <div className=" mt-10 grid grid-cols-3 gap-7.5">
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-7.5">
             {
-                products.map(product => <Product key={product.id} product={product}></Product>)
+                products.map(product => <Product key={product.id} product={product} handleCartProducts={handleCartProducts}></Product>)
             }
         </div>
     );
