@@ -25,14 +25,15 @@ const Banner = () => {
                     <h1 className="text-5xl lg:text-7xl font-extrabold lg:leading-21 my-4">Supercharge Your Digital Workflow</h1>
                     <p className=" text-[#627382] lg:text-[18px]">
                         Access premium AI tools, design assets, templates, and productivity
-                        software—all in one place. Start creating faster today.
+                        software—all in one place.
+                        Start creating faster today.
                         Explore Products
                     </p>
                     <div className='mt-8 space-x-4'>
                         <button className="btn btn-primary rounded-full font-bold text-white bg-linear-to-r from-[#4F39F6] to-[#9514FA]">Explore Products</button>
                         <button className="bg-linear-to-r from-[#4F39F6] to-[#9514FA] p-px rounded-full">
                             <div className='bg-white rounded-full'>
-                                <button className="btn  rounded-full font-bold text-transparent bg-linear-to-r from-[#4F39F6] to-[#9514FA] bg-clip-text"><img src={play} alt="" /> Watch Demo</button>
+                                <span className="btn  rounded-full font-bold text-transparent bg-linear-to-r from-[#4F39F6] to-[#9514FA] bg-clip-text"><img src={play} alt="" /> Watch Demo</span>
                             </div>
                         </button>
                     </div>
