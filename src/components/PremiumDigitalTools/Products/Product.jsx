@@ -27,9 +27,11 @@ const Product = ({ product, handleCartProducts }) => {
                 ))}
             </ul>
             <button
-            onClick={()=>handleCartProducts(product)}
+                onClick={() => handleCartProducts(product)}
                 className="btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] font-bold text-white rounded-full"
-            >Buy Now</button>
+            >
+                Buy Now
+            </button>
         </div>
     );
 };

@@ -4,11 +4,11 @@ import { productsPromise } from "../../fetchData";
 import CartContainer from "./cart/CartContainer";
 import Loanding from "../loading/Loanding";
 
-const PremiumDigitalTools = ({ handleCartProducts, catrProducts, handleRemove }) => {
+const PremiumDigitalTools = ({ handleCartProducts, catrProducts, handleRemove, handleClearCart, isCart, setIsCart }) => {
 
     const products = use(productsPromise);
 
-    const [isCart, setIsCart] = useState(false);
+
 
     return (
 
@@ -38,7 +38,9 @@ const PremiumDigitalTools = ({ handleCartProducts, catrProducts, handleRemove })
                         </Suspense>
                         : <CartContainer
                             catrProducts={catrProducts}
-                            handleRemove={handleRemove} >
+                            handleRemove={handleRemove}
+                            handleClearCart={handleClearCart}
+                        >
                         </CartContainer>
                 }
 

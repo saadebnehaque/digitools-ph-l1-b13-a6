@@ -1,6 +1,6 @@
 import CartCard from "./CartCard";
 
-const CartContainer = ({ catrProducts, handleRemove }) => {
+const CartContainer = ({ catrProducts, handleRemove, handleClearCart }) => {
 
 
 
@@ -25,6 +25,7 @@ const CartContainer = ({ catrProducts, handleRemove }) => {
                             <h2 className="text-[#101727] font-bold text-2xl">$78</h2>
                         </div>
                         <button
+                            onClick={handleClearCart}
                             className="btn bg-linear-to-r from-[#4F39F6] to-[#9514fa] text-white font-bold rounded-full py-3"
                         >Proceed to Checkout</button>
                     </>

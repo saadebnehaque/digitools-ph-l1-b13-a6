@@ -6,7 +6,7 @@ import Banner from './components/banner/Banner';
 import Navbar from './components/Navbar/Navbar';
 import PremiumDigitalTools from './components/PremiumDigitalTools/PremiumDigitalTools';
 import Stats from './components/stats/Stats';
-import { toast, ToastContainer } from 'react-toastify';
+import { Bounce, toast, ToastContainer } from 'react-toastify';
 
 
 
@@ -27,17 +27,32 @@ function App() {
     setCartProducts(updatedCart);
     toast.warning(`${product.name} is removed from cart`);
   }
+
+  const handleClearCart = () => {
+    setCartProducts([]);
+    toast.info(`Proceeding to checkout, your cart is cleared`);
+  }
+
+
+  const [isCart, setIsCart] = useState(false);
+
+
+
+
   return (
     <>
-      <Navbar catrProducts={catrProducts}></Navbar>
+      <Navbar catrProducts={catrProducts} isCart={isCart} setIsCart={setIsCart}></Navbar>
       <Banner></Banner>
       <Stats></Stats>
-      <PremiumDigitalTools handleCartProducts={handleCartProducts} catrProducts={catrProducts} handleRemove={handleRemove}></PremiumDigitalTools>
+      <PremiumDigitalTools handleCartProducts={handleCartProducts} catrProducts={catrProducts} handleRemove={handleRemove} isCart={isCart} setIsCart={setIsCart} handleClearCart={handleClearCart}></PremiumDigitalTools>
 
 
 
 
-      <ToastContainer></ToastContainer>
+      <ToastContainer
+        position="bottom-right"
+        transition={Bounce}
+      ></ToastContainer>
     </>
   )
 }
