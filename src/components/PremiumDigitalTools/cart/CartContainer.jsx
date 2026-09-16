@@ -2,7 +2,7 @@ import CartCard from "./CartCard";
 
 const CartContainer = ({ catrProducts, handleRemove, handleClearCart }) => {
 
-
+    const toralPrice = catrProducts.reduce((sum, product) => sum + Number(product.price), 0);
 
     return (
         <div className="p-10 rounded-2xl border border-[#f2f2f2] flex flex-col gap-6">
@@ -22,7 +22,7 @@ const CartContainer = ({ catrProducts, handleRemove, handleClearCart }) => {
                         </div>
                         <div className="flex items-center justify-between">
                             <p className="text-[#627382]">Total:</p>
-                            <h2 className="text-[#101727] font-bold text-2xl">$78</h2>
+                            <h2 className="text-[#101727] font-bold text-2xl">${toralPrice}</h2>
                         </div>
                         <button
                             onClick={handleClearCart}
